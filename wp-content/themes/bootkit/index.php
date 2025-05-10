@@ -10,7 +10,7 @@
 
     <title>Modern Business - Start Bootstrap Template</title>
 
-    <?php wp_head();?>
+    <?php wp_head(); ?>
 
 </head>
 
@@ -26,7 +26,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
+                <!-- <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
@@ -73,7 +73,18 @@
                             <a class="dropdown-item" href="pricing.html">Pricing Table</a>
                         </div>
                     </li>
-                </ul>
+                </ul> -->
+                <?php
+                    if (has_nav_menu('primary')) {
+                        wp_nav_menu([
+                            'theme_location' => 'primary',
+                            'container'      => false,
+                            'menu_class'     => 'menu',
+                            'fallback_cb'    => false,
+                            'depth'          => 4,
+                        ]);
+                    }
+                ?>
             </div>
         </div>
     </nav>
@@ -300,7 +311,7 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <?php wp_footer();?>
+    <?php wp_footer(); ?>
 
 </body>
 
