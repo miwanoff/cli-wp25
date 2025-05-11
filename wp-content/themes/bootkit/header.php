@@ -14,7 +14,7 @@
 
 </head>
 
-<body <?php body_class();?>>
+<body <?php body_class(); ?>>
 
     <!-- Navigation -->
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark fixed-top">
@@ -27,21 +27,21 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <?php
-if (has_nav_menu('primary')) {
-    wp_nav_menu(array(
-        'theme_location' => 'primary',
-        'depth' => 2,
-        'container' => false,
-        'menu_class' => 'navbar-nav ml-auto',
-        'fallback_cb' => false,
-        'walker' => new Bootkit_Nav_Walker(),
-    ));
-}
+                    if (has_nav_menu('primary')) {
+                        wp_nav_menu([
+                            'theme_location' => 'primary',
+                            'depth'          => 2,
+                            'container'      => false,
+                            'menu_class'     => 'navbar-nav ml-auto',
+                            'fallback_cb'    => false,
+                            'walker'         => new Bootkit_Nav_Walker(),
+                        ]);
+                    }
                 ?>
             </div>
         </div>
     </nav>
-
+    <?php if (is_front_page()) {?>
     <header>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -85,3 +85,5 @@ if (has_nav_menu('primary')) {
             </a>
         </div>
     </header>
+
+    <?php }?>
