@@ -51,10 +51,12 @@ get_header(); ?>
             <!-- Pagination -->
             <ul class="pagination justify-content-center mb-4">
                 <li class="page-item">
-                    <a class="page-link" href="#">← Older</a>
+                    <?php previous_posts_link("← Older");?>
+                    <!-- <a class="page-link" href="#">← Older</a> -->
                 </li>
-                <li class="page-item disabled">
-                    <a class="page-link" href="#">Newer →</a>
+                <li class="page-item">
+                    <?php next_posts_link("Newer →");?>
+                    <!-- <a class="page-link" href="#">Newer →</a> -->
                 </li>
             </ul>
         </div>
