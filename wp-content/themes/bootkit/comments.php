@@ -5,7 +5,7 @@
 
 <!-- Comments Form -->
 <div class="card my-4">
-    <h5 class="card-header">Leave a Comment:</h5>
+    <!-- <h5 class="card-header">Leave a Comment:</h5> -->
     <div class="card-body">
         <?php comment_form([
                 'comment_field' => '<div class="form-group">
@@ -35,12 +35,15 @@
     </div>
 </div>
 
+<?php
+    if (have_comments()) {
+    ?>
 <!-- Comments List -->
 
 <?php
 
-foreach ($comments as $comment) {
-    ?>
+        foreach ($comments as $comment) {
+        ?>
 <div class="media mb-4">
     <div class="comment-meta">
         <div class="comment-author vcard">
@@ -51,16 +54,19 @@ foreach ($comments as $comment) {
     </div>
     <div class="comment-content clearfix">
         <div class="comment-author">
-            <?php comment_author();?>
-            <span><?php comment_date();?></span>
+            <?php comment_author(); ?>
+            <span><?php comment_date(); ?></span>
         </div>
         <div class="media-body">
-            <?php comment_text();?>
+            <?php comment_text(); ?>
         </div>
     </div>
 </div>
 <?php
-}
-the_comments_pagination();
-?>
+    }
+        the_comments_pagination();
+    ?>
 <!-- .commentlist end -->
+<?php
+}
+?>
