@@ -34,42 +34,33 @@
         ]); ?>
     </div>
 </div>
-<!-- Single Comment -->
-<div class="media mb-4">
-    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-    <div class="media-body">
-        <h5 class="mt-0">Commenter Name</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-        vulputate fringilla. Donec lacinia congue felis in faucibus.
-    </div>
-</div>
 
-<!-- Comment with nested comments -->
+<!-- Comments List -->
+
+<?php
+
+foreach ($comments as $comment) {
+    ?>
 <div class="media mb-4">
-    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-    <div class="media-body">
-        <h5 class="mt-0">Commenter Name</h5>
-        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras
-        purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi
-        vulputate fringilla. Donec lacinia congue felis in faucibus.
-        <div class="media mt-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-                <h5 class="mt-0">Commenter Name</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
-                ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
+    <div class="comment-meta">
+        <div class="comment-author vcard">
+            <span class="comment-avatar clearfix">
+                <?php echo get_avatar($comment, 60, '', '', ['class' => 'd-flex mr-3 rounded-circle']); ?>
+            </span>
         </div>
-        <div class="media mt-4">
-            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-            <div class="media-body">
-                <h5 class="mt-0">Commenter Name</h5>
-                Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin.
-                Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc
-                ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-            </div>
+    </div>
+    <div class="comment-content clearfix">
+        <div class="comment-author">
+            <?php comment_author();?>
+            <span><?php comment_date();?></span>
+        </div>
+        <div class="media-body">
+            <?php comment_text();?>
         </div>
     </div>
 </div>
+<?php
+}
+the_comments_pagination();
+?>
+<!-- .commentlist end -->
