@@ -41,6 +41,7 @@
             </div>
         </div>
     </nav>
+
     <?php if (is_front_page()) {?>
     <header>
         <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -86,4 +87,6 @@
         </div>
     </header>
 
-    <?php }?>
+    <?php }
+     ?>
+    <!-- <?php  breadcrumbs(); ?> -->
