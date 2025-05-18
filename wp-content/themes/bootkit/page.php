@@ -10,7 +10,7 @@ get_header(); ?>
     <div class="row">
 
         <!-- Post Content Column -->
-        <div class="col-lg-12">
+        <div class="col-lg-8">
             <?php
 
                 while (have_posts()) {
