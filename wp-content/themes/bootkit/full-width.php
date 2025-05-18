@@ -1,4 +1,10 @@
 <?php
+
+/*
+ * Template Name: Full Width Page
+ * Template post type: post, page
+ */
+
 get_header(); ?>
 
 <!-- Page Content -->
@@ -99,7 +105,7 @@ get_header(); ?>
                 }
             ?>
         </div>
-        <?php  get_sidebar();  ?>
+        <!-- <?php /* get_sidebar(); */ ?> -->
         <?php /* get_sidebar('second')  sidebar-second.php */?>
     </div>
     <!-- /.row -->
