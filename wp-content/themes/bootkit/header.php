@@ -89,4 +89,5 @@
 
     <?php }
      ?>
-    <?php  breadcrumbs(); ?>
+    <!-- <?php  breadcrumbs(); ?> -->
+    <?php echo do_shortcode('[breadcrumbs]'); ?>
