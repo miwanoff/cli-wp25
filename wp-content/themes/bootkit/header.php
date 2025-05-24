@@ -89,4 +89,4 @@
 
     <?php }
      ?>
-    <!-- <?php  breadcrumbs(); ?> -->
+    <?php  breadcrumbs(); ?>
